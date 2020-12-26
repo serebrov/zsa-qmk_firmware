@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e
+shopt -s nullglob
 
 SCRIPT_PATH=`dirname $0`
+ROOT_DIR=$SCRIPT_PATH/..
 
 DOWNLOADS=~/Downloads
 
@@ -25,18 +27,38 @@ process_zip()
       # surrounded by underscores moonlander_{keymap}_7JaNr_b7nzg.zip
       keymap=$(echo ${base_name} | sed -n 's#'"${KEYBOARD}"'_\([^_]*\).*\.zip$#\1#p')
       echo Keymap: $keymap
+
+      keymap_dir=$ROOT_DIR/keyboards/$KEYMAP_DIR/keymaps/$keymap
+      mkdir -p $keymap_dir
+
+      # Archive structure:
+      # README.md
+      # planck_ez_glow_planck-symmetric_bdgLp_yGg3r.bin
+      # planck_ez_glow_planck-symmetric_source
+      # build.log
+      # planck_ez_glow_planck-symmetric_bdgLp_yGg3r.md5
+      source=$(echo ${base_name} | sed -n 's#('"${KEYBOARD}"'_\[^_]*\).*\.zip$#\1#p')
+      echo source: $source
+
+      # -o - overwrite files without prompt
+      # -j - do not preserve file paths in the archive
+      # $zip_file - zip file to extract
+      # $source/* - files to include
+      # -d $keymap_dir - dir to extract to
+      unzip -o $zip_file README.md build.log $source/* -d $keymap_dir
+
   done
 }
 
-NAME=ergodox_ez
-KEYMAP_DIR=$NAME
-process_zip $DOWNLOADS $NAME $KEYMAP_DIR
-echo
+# NAME=ergodox_ez
+# KEYMAP_DIR=$NAME
+# process_zip $DOWNLOADS $NAME $KEYMAP_DIR
+# echo
 
-NAME=moonlander
-KEYMAP_DIR=$NAME
-process_zip $DOWNLOADS $NAME $KEYMAP_DIR
-echo
+# NAME=moonlander
+# KEYMAP_DIR=$NAME
+# process_zip $DOWNLOADS $NAME $KEYMAP_DIR
+# echo
 
 NAME=planck_ez_glow
 KEYMAP_DIR=planck
