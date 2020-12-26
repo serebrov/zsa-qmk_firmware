@@ -1,3 +1,13 @@
+# My fork of ZSA's fork of QMK Firmware 
+
+I already have a [qmk fork](https://github.com/serebrov/qmk_firmware) and github does not allow to create a second one (even if it is a fork of a fork, so not the same repository).
+So instead I have a regular repository with a reference to the [original zsa fork](https://github.com/zsa/qmk_firmware) (the "zsa" origin in ./git/config).
+
+The purpose of my fork is to add a web USB support to mitosis, so it can be used with ZSA's online training mode.
+The [change](https://github.com/serebrov/zsa-qmk_firmware/commit/e47d68b1d163fdf2e13fb4ce3f402186eac17174) is quite simple and the training mode works, except for the heatmap.
+
+To flash the firmware, run `./bin/qmk -kb mitosis -km mitosis_mini`.
+
 # ZSA's fork of QMK Firmware 
 
 [![Current Version](https://img.shields.io/github/tag/ErgoDox-EZ/qmk_firmware.svg)](https://github.com/ErgoDox-EZ/qmk_firmware/tags)
