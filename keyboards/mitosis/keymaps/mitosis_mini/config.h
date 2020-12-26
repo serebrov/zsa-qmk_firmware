@@ -1,6 +1,6 @@
 #pragma once
 
-#define AUTO_SHIFT_TIMEOUT 120
+#define AUTO_SHIFT_TIMEOUT 130
 
 // https://beta.docs.qmk.fm/using-qmk/software-features/tap_hold#tapping-force-hold
 //

@@ -39,3 +39,5 @@ MITOSIS_UPLOAD_COMMAND = while [ ! -r $(USB) ]; do sleep 1; done; \
 
 # # project specific files
 SRC = matrix.c
+
+WEBUSB_ENABLE = yes

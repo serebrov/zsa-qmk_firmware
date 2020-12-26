@@ -1,4 +1,7 @@
 #include "mitosis.h"
+#ifdef WEBUSB_ENABLE
+#include "webusb.h"
+#endif
 
 void uart_init(void) {
 	SERIAL_UART_INIT();
