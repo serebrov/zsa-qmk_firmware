@@ -37,7 +37,7 @@ process_zip()
       # planck_ez_glow_planck-symmetric_source
       # build.log
       # planck_ez_glow_planck-symmetric_bdgLp_yGg3r.md5
-      source=$(echo ${base_name} | sed -n 's#('"${KEYBOARD}"'_\[^_]*\).*\.zip$#\1#p')
+      source=${KEYBOARD}_${keymap}_source
       echo source: $source
 
       # -o - overwrite files without prompt
@@ -45,50 +45,22 @@ process_zip()
       # $zip_file - zip file to extract
       # $source/* - files to include
       # -d $keymap_dir - dir to extract to
-      unzip -o $zip_file README.md build.log $source/* -d $keymap_dir
+      unzip -o -j $zip_file README.md build.log $source/\* -d $keymap_dir
 
   done
 }
 
-# NAME=ergodox_ez
-# KEYMAP_DIR=$NAME
-# process_zip $DOWNLOADS $NAME $KEYMAP_DIR
-# echo
+NAME=ergodox_ez
+KEYMAP_DIR=$NAME
+process_zip $DOWNLOADS $NAME $KEYMAP_DIR
+echo
 
-# NAME=moonlander
-# KEYMAP_DIR=$NAME
-# process_zip $DOWNLOADS $NAME $KEYMAP_DIR
-# echo
+NAME=moonlander
+KEYMAP_DIR=$NAME
+process_zip $DOWNLOADS $NAME $KEYMAP_DIR
+echo
 
 NAME=planck_ez_glow
 KEYMAP_DIR=planck
 process_zip $DOWNLOADS $NAME $KEYMAP_DIR
-echo
-
-
-# mv ~/Downloads/ergodox_ez_ergodox-mini-0-1-5_aegvO_xL3nx.zip .
-# gst
-# unzip ergodox_ez_ergodox-mini-0-1-5_aegvO_xL3nx.zip
-# rm ergodox_ez_ergodox-mini-0-1-5_aegvO_xL3nx.zip
-# Ls
-# gst
-# nvim README.md
-# mkdir ergodox-mini
-# Ls
-# gst
-# mkdir keymaps/ergodox-mini
-# mv ergodox_ez_ergodox-mini-0-1-5_source/* keymaps/ergodox-mini
-# mv README.md keymaps/ergodox-mini
-# gst
-# rm ergodox_ez_ergodox-mini-0-1-5_aegvO_xL3nx.md5
-# gst
-# mv ergodox_ez_ergodox-mini-0-1-5_aegvO_xL3nx.hex keymaps/ergodox-mini
-# ..
-# gst
-# ../../
-# gst
-# cd zsa_qmk_firmware/
-# gst
-# nvim etc/update-keymap-from-zip.sh
-# rmdir keyboards/moonlander/ergodox_ez_ergodox-mini-0-1-5_source
-# gst
+echo 
