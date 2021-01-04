@@ -52,22 +52,19 @@ enum custom_keycodes {
   HSV_38_255_255,
   HSV_141_255_255,
   HSV_225_255_255,
-  ST_MACRO_0,
-  ST_MACRO_1,
-  ST_MACRO_2,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 DYN_REC_START1, DYN_REC_STOP,   DYN_MACRO_PLAY1,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           KC_TRANSPARENT,                                                                 KC_TRANSPARENT, KC_H,           KC_J,           KC_K,           KC_L,           RGUI_T(KC_ENTER),KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           LALT_T(KC_COMMA),KC_DOT,         KC_SLASH,       KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, OSM(MOD_LCTL),  OSL(1),         KC_ESCAPE,                                                                                                      KC_TRANSPARENT, OSL(1),         OSM(MOD_LSFT),  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    LT(2,KC_SPACE), KC_TRANSPARENT, KC_BRIGHTNESS_DOWN,                KC_BRIGHTNESS_UP,KC_TRANSPARENT, LT(5,KC_SPACE)
+    LT(2,KC_SPACE), KC_TRANSPARENT, KC_TRANSPARENT,                 KC_TRANSPARENT, KC_TRANSPARENT, LT(5,KC_SPACE)
   ),
   [1] = LAYOUT_moonlander(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_0,     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_1,     ST_MACRO_2,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_GRAVE,       KC_LPRN,        KC_RPRN,        LT(4,KC_QUOTE), KC_EQUAL,       KC_TRANSPARENT,                                                                 KC_TRANSPARENT, KC_BSLASH,      LT(3,KC_MINUS), KC_LBRACKET,    KC_RBRACKET,    KC_SCOLON,      KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TILD,        KC_LABK,        KC_RABK,        KC_DQUO,        KC_PLUS,                                        KC_PIPE,        KC_UNDS,        KC_LCBR,        KC_RCBR,        KC_COLN,        KC_TRANSPARENT, 
@@ -211,24 +208,6 @@ void rgb_matrix_indicators_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case ST_MACRO_0:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_TAP(X_EQUAL) SS_DELAY(100) SS_TAP(X_SPACE));
-
-    }
-    break;
-    case ST_MACRO_1:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_TAP(X_MINUS) SS_DELAY(100) SS_TAP(X_SPACE));
-
-    }
-    break;
-    case ST_MACRO_2:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_KP_ASTERISK) SS_DELAY(100) SS_TAP(X_SPACE));
-
-    }
-    break;
     case RGB_SLD:
       if (record->event.pressed) {
         rgblight_mode(1);
