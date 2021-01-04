@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
     KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           LT(4,KC_ESCAPE),                                LT(4,KC_ESCAPE),KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_EQUAL,       
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_EQUAL,                                       KC_MINUS,       KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLASH,      
-    KC_CAPSLOCK,    LT(1,KC_A),     LT(2,KC_S),     LCTL_T(KC_D),   LSFT_T(KC_K),   KC_G,           KC_BSPACE,                                                                      KC_BSPACE,      RSFT_T(KC_H),   RCTL_T(KC_D),   KC_K,           LT(2,KC_L),     LT(1,KC_SCOLON),KC_QUOTE,       
-    LSFT_T(KC_ENTER),LCTL_T(KC_Z),   KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         RCTL_T(KC_SLASH),RSFT_T(KC_ENTER),
-    TG(3),          LCTL_T(KC_NO),  KC_LALT,        KC_AUDIO_VOL_DOWN,LGUI_T(KC_ENTER),MT(MOD_HYPR, KC_ESCAPE),                                                                                                MT(MOD_MEH, KC_ESCAPE),RGUI_T(KC_ENTER),KC_AUDIO_VOL_UP,RALT_T(KC_LBRACKET),RCTL_T(KC_RBRACKET),TG(1),          
+    KC_CAPSLOCK,    LT(1,KC_A),     LT(2,KC_S),     LCTL_T(KC_D),   LSFT_T(KC_F),   KC_G,           KC_BSPACE,                                                                      KC_BSPACE,      KC_H,           RSFT_T(KC_J),   RCTL_T(KC_K),   LT(2,KC_L),     LT(1,KC_SCOLON),KC_QUOTE,       
+    LSFT_T(KC_ENTER),KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       RSFT_T(KC_ENTER),
+    TG(3),          KC_LCTRL,       KC_LALT,        KC_AUDIO_VOL_DOWN,LGUI_T(KC_ENTER),MT(MOD_HYPR, KC_ESCAPE),                                                                                                MT(MOD_MEH, KC_ESCAPE),RGUI_T(KC_ENTER),KC_AUDIO_VOL_UP,KC_LBRACKET,    KC_RBRACKET,    TG(1),          
     KC_SPACE,       KC_ENTER,       KC_BRIGHTNESS_UP,                KC_BRIGHTNESS_DOWN,KC_ENTER,       KC_SPACE
   ),
   [1] = LAYOUT_moonlander(

@@ -6,5 +6,5 @@
 #undef TAPPING_TERM
 #define TAPPING_TERM 235
 
-#define FIRMWARE_VERSION u8"7JaNr/vrgYr"
+#define FIRMWARE_VERSION u8"7JaNr/65Qyq"
 #define RGB_MATRIX_STARTUP_SPD 60
