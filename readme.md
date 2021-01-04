@@ -8,6 +8,9 @@ The [change](https://github.com/serebrov/zsa-qmk_firmware/commit/e47d68b1d163fdf
 
 To flash the firmware, run `./bin/qmk -kb mitosis -km mitosis_mini`.
 
+Another useful tool is the ./etc/update-keymaps-from-zip.sh.
+It looks for \*.zip files under Downloads folder with firmware sources downloaded from the ORYX configurator, extracts them and puts under keyboard/xxx/keymaps folder.
+
 # ZSA's fork of QMK Firmware 
 
 [![Current Version](https://img.shields.io/github/tag/ErgoDox-EZ/qmk_firmware.svg)](https://github.com/ErgoDox-EZ/qmk_firmware/tags)
